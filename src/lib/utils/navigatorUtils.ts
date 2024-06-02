@@ -7,8 +7,14 @@ declare global {
     }
   }
 }
-
-export const IS_MAC =
+let mac = false
+try {
+     mac = =
   navigator?.platform?.toUpperCase().includes('MAC') ??
   navigator?.userAgentData?.platform?.toUpperCase().includes('MAC') ??
   false
+} catch (e) {
+    mac = false
+}
+
+export const IS_MAC = mac
